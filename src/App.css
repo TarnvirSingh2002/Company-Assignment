@@ -14,7 +14,7 @@ body, html, #root {
 }
 
 .login-box {
-  background: rgba(255, 255, 255, 0.1);
+  background-color: black;
   padding: 40px;
   border-radius: 16px;
   backdrop-filter: blur(12px);
@@ -22,8 +22,8 @@ body, html, #root {
   width: 100%;
   max-width: 400px;
   color: #fff;
-}
 
+}
 .login-box h2 {
   margin-bottom: 24px;
   font-size: 2rem;
