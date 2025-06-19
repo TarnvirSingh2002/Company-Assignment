@@ -28,11 +28,12 @@ import HomePage from './pages/HomePage';
 import ListingDetailPage from './pages/ListingDetailPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import HostDashboardPage from './pages/HostDashboardPage'; // Optional
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PrivateRoute from './components/Common/PrivateRoute'; // For protected routes
 import HostRoute from './components/Common/HostRoute'; // For host-only routes
+import './App.css';
+import HostDashboardPage from './pages/HostDashboardPage';
 
 function App() {
   return (
@@ -42,14 +43,14 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} exact />
           <Route path="/listing/:id" element={<ListingDetailPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/auth/login" element={<LoginPage />} />
+          <Route path="/auth/register" element={<RegisterPage />} />
           {/* Protected Routes */}
           <Route path="/profile" element={<PrivateRoute><HostDashboardPage /></PrivateRoute>} />
           {/* Host Specific Routes */}
-          <Route path="/host/dashboard" element={<HostRoute><HostDashboardPage /></HostRoute>} />
-          <Route path="/host/listings/new" element={<HostRoute><HostDashboardPage /></HostRoute>} /> {/* Example */}
-          <Route path="/host/listings/edit/:id" element={<HostRoute><HostDashboardPage /></HostRoute>} /> {/* Example */}
+          <Route path="/host/dashboard" element={<HostDashboardPage />} />
+          <Route path="/host/listings/new" element={<HostDashboardPage />} /> Example
+          <Route path="/host/listings/edit/:id" element={<HostRoute><HostDashboardPage /></HostRoute>} /> Example
           {/* Add more routes as needed */}
         </Routes>
       </main>

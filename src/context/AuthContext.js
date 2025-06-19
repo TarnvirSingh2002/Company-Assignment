@@ -1,11 +1,12 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios'; // Using axios for API calls
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isLoggedIn,setIsLoggedIn]=useState(false);
 
   // Load user from localStorage on initial load
   useEffect(() => {
@@ -24,11 +25,12 @@ export const AuthProvider = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`,
+        `http://localhost:5000/api/auth/login`,
         { email, password },
         config
       );
       setUser(data);
+      console.log(user);
       localStorage.setItem('userInfo', JSON.stringify(data));
       return data;
     } catch (error) {
@@ -38,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const register = async (name, email, password, isHost) => {
+  const register = async (name, email, password, role) => {
     try {
       const config = {
         headers: {
@@ -46,8 +48,8 @@ export const AuthProvider = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/auth/register`,
-        { name, email, password, isHost },
+        `http://localhost:5000/api/auth/register`,
+        { name, email, password, role },
         config
       );
       setUser(data);
@@ -66,7 +68,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, isLoggedIn, setIsLoggedIn }}>
       {!loading && children}
     </AuthContext.Provider>
   );

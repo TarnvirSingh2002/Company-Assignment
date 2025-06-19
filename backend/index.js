@@ -5,8 +5,11 @@ import dotenv from"dotenv"
 import authRoutes from './routes/auth.js';
 import listingRoutes from './routes/listings.js';
 import bookingRoutes from './routes/bookings.js';
+import { connectDB } from "./db.js";
 
 dotenv.config();
+
+connectDB();
 
 const app = express();
 app.use(cors());

@@ -1,0 +1,154 @@
+.auth-container {
+    max-width: 450px;
+    margin: 3rem auto; /* Top/bottom margin, auto left/right to center */
+    padding: 2.5rem; /* Equivalent to Tailwind's p-10 */
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* Equivalent to Tailwind's rounded-xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Equivalent to Tailwind's shadow-2xl */
+    border: 1px solid #e2e8f0; /* Equivalent to Tailwind's border border-gray-200 */
+    text-align: center;
+    font-family: 'Inter', sans-serif; /* Use the Inter font, assuming it's imported globally */
+}
+
+.auth-container h2 {
+    font-size: 2.25rem; /* Equivalent to Tailwind's text-4xl */
+    font-weight: 800; /* Equivalent to Tailwind's font-extrabold */
+    color: #4c51bf; /* A shade of purple, similar to Tailwind's text-purple-700 from previous example */
+    margin-bottom: 2rem; /* Equivalent to Tailwind's mb-8 */
+    letter-spacing: -0.025em; /* Equivalent to Tailwind's tracking-tight */
+}
+
+.error-message {
+    background-color: #fee2e2; /* Equivalent to Tailwind's bg-red-100 */
+    border: 1px solid #f87171; /* Equivalent to Tailwind's border-red-400 */
+    color: #dc2626; /* Equivalent to Tailwind's text-red-700 */
+    padding: 0.75rem 1rem; /* Equivalent to Tailwind's px-4 py-3 */
+    border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
+    margin-bottom: 1.5rem; /* Equivalent to Tailwind's mb-6 */
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Equivalent to Tailwind's space-y-6 */
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+    font-weight: 500; /* Equivalent to Tailwind's font-medium */
+    color: #4a5568; /* Equivalent to Tailwind's text-gray-700 */
+    margin-bottom: 0.25rem; /* Equivalent to Tailwind's mb-1 */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 0.625rem 1rem; /* Equivalent to Tailwind's px-4 py-2 */
+    border: 1px solid #cbd5e0; /* Equivalent to Tailwind's border-gray-300 */
+    border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Equivalent to Tailwind's shadow-sm */
+    font-size: 1rem; /* Equivalent to Tailwind's sm:text-base */
+    outline: none; /* Remove default outline */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #6366f1; /* Equivalent to Tailwind's focus:border-purple-500 */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25); /* Equivalent to Tailwind's focus:ring-purple-500 */
+}
+
+/* Specific styling for error state of inputs */
+.form-group input.error-input {
+    border-color: #ef4444; /* Equivalent to Tailwind's border-red-500 */
+}
+/* You'd need to add a class `error-input` to your input fields conditionally in React */
+/* Example: className={`${errors.email ? 'error-input' : ''}`} */
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem; /* Adjust as needed */
+    margin-bottom: 1.5rem; /* Keep consistent spacing */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem; /* Space between checkbox and label */
+    width: 1rem; /* Adjust checkbox size */
+    height: 1rem;
+    accent-color: #6366f1; /* Color for checked checkbox */
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin for labels in checkbox group */
+    font-size: 0.875rem;
+    font-weight: 400; /* Regular font weight for checkbox label */
+}
+
+.btn-primary {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem; /* Equivalent to Tailwind's py-3 px-4 */
+    border: 1px solid transparent;
+    border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to Tailwind's shadow-lg */
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+    font-weight: 600; /* Equivalent to Tailwind's font-semibold */
+    color: #ffffff;
+    background-color: #6366f1; /* Equivalent to Tailwind's bg-purple-600 */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+    outline: none; /* Remove outline on focus */
+}
+
+.btn-primary:hover {
+    background-color: #554fd7; /* Equivalent to Tailwind's hover:bg-purple-700 */
+    transform: translateY(-2px); /* Equivalent to Tailwind's hover:-translate-y-0.5 */
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5); /* Equivalent to Tailwind's focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 */
+}
+
+.btn-primary:disabled {
+    opacity: 0.6; /* Equivalent to Tailwind's disabled:opacity-60 */
+    cursor: not-allowed; /* Equivalent to Tailwind's disabled:cursor-not-allowed */
+    transform: translateY(0); /* Reset transform when disabled */
+    box-shadow: none; /* Remove shadow when disabled */
+}
+
+/* Link for "Already have an account?" text */
+.auth-container p a {
+    font-weight: 600; /* Equivalent to Tailwind's font-semibold */
+    color: #6366f1; /* Equivalent to Tailwind's text-purple-600 */
+    transition: color 0.3s ease-in-out;
+}
+
+.auth-container p a:hover {
+    color: #554fd7; /* Equivalent to Tailwind's hover:text-purple-800 */
+    text-decoration: underline;
+}
+
+/* Basic responsiveness for smaller screens */
+@media (max-width: 600px) {
+    .auth-container {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+
+    .auth-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 0.625rem 1rem;
+    }
+}

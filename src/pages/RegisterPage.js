@@ -20,7 +20,8 @@ const RegisterPage = () => {
       return;
     }
     try {
-      await register(name, email, password, isHost);
+      const role = isHost ? "host" : "guest";
+      await register(name, email, password, role);
       navigate('/'); // Redirect to homepage on successful registration
     } catch (error) {
       setMessage(error);

@@ -1,13 +1,13 @@
-import express  from('express');
+import express  from'express';
 const router =  express.Router();
-import bookingController  from('../controllers/bookingController.js');
-import authMiddleware  from('../middleware/authMiddleware'); // For protected routes
+import { createBooking, deleteBooking, getListingBookings, getUserBookings }  from'../controllers/bookingController.js';
+import authMiddleware  from'../middleware/authMiddleware.js'; // For protected routes
 
-router.post('/', authMiddleware, bookingController.createBooking);
+router.post('/', authMiddleware, createBooking);
 
-router.get('/my', authMiddleware, bookingController.getUserBookings);
-router.get('/listing/:listingId', authMiddleware, bookingController.getListingBookings);
+router.get('/my', authMiddleware, getUserBookings);
+router.get('/listing/:listingId', authMiddleware, getListingBookings);
 
-router.delete('/:id', authMiddleware, bookingController.deleteBooking);
+router.delete('/:id', authMiddleware, deleteBooking);
 
 export default router;

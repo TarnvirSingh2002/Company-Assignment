@@ -1,10 +1,11 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-export const db=()=>{
-     mongoose.connect("mongodb://localhost:27017/intershalla")
-    .then(()=>console.log('DB connected successfully'))
-    .catch((err)=>{
-        console.log('DB connection failed')
-        console.log(err);
-    })
+export const connectDB = async () => {
+  try {
+    await mongoose.connect("mongodb://127.0.0.1:27017/intershalla");
+    console.log('✅ DB connected successfully');
+  } catch (err) {
+    console.error('❌ DB connection failed:', err.message);
+    process.exit(1); // Exit app if DB fails to connect
+  }
 };

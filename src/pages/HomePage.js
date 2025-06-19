@@ -11,7 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/listings`);
+        const { data } = await axios.get(`http://localhost:5000/api/listings`);
         setListings(data);
         setLoading(false);
       } catch (err) {

@@ -1,0 +1,34 @@
+.homepage {
+    padding: 2rem 1rem; /* Adjust padding as needed, equivalent to Tailwind's py-8 px-4 */
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the content */
+    text-align: center;
+}
+
+.homepage h1 {
+    font-size: 2.5rem; /* Equivalent to Tailwind's text-4xl */
+    font-weight: 800; /* Equivalent to Tailwind's font-extrabold */
+    color: #1a202c; /* Equivalent to Tailwind's text-gray-900 */
+    margin-bottom: 2.5rem; /* Equivalent to Tailwind's mb-10 */
+}
+
+.listings-grid {
+    display: grid;
+    /* Responsive grid columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax for card size */
+    gap: 2rem; /* Equivalent to Tailwind's gap-8 */
+    justify-items: center; /* Center items in the grid cells */
+}
+
+/* Optional: Basic styling for loading/error messages if you prefer CSS over Tailwind classes directly */
+.loading-message,
+.error-message {
+    text-align: center;
+    font-size: 1.25rem; /* text-xl */
+    color: #4a5568; /* text-gray-700 */
+    margin-top: 5rem;
+}
+
+.error-message {
+    color: #e53e3e; /* text-red-600 */
+}

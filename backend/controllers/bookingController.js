@@ -1,5 +1,5 @@
-import Booking from '../models/Booking'; // .default for ES module import
-import Listing  from'../models/Listing'; // Assuming Listing is also an ES module
+import Booking from '../models/Booking.js'; // .default for ES module import
+import Listing  from'../models/Listing.js'; // Assuming Listing is also an ES module
 import mongoose from 'mongoose'; // For ObjectId validation
 
 export const createBooking = async (req, res) => {

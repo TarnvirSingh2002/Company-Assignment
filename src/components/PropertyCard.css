@@ -1,0 +1,63 @@
+.property-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem; /* Equivalent to Tailwind's rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to Tailwind's shadow-md */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards in a grid maintain height */
+}
+
+.property-card:hover {
+    transform: scale(1.05); /* Equivalent to Tailwind's hover:scale-105 */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Equivalent to Tailwind's hover:shadow-xl */
+}
+
+.property-image {
+    width: 100%;
+    height: 12rem; /* A fixed height, adjust as needed. Equivalent to Tailwind's h-48 */
+    object-fit: cover; /* Ensures the image covers the area, cropping if necessary */
+    border-top-left-radius: 0.75rem; /* Match parent border-radius */
+    border-top-right-radius: 0.75rem; /* Match parent border-radius */
+}
+
+.property-info {
+    padding: 1rem; /* Equivalent to Tailwind's p-4 */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows info section to grow and push price to bottom if needed */
+}
+
+.property-info h3 {
+    font-size: 1.125rem; /* Equivalent to Tailwind's text-lg */
+    font-weight: 600; /* Equivalent to Tailwind's font-semibold */
+    color: #1a202c; /* Equivalent to Tailwind's text-gray-800 */
+    margin-bottom: 0.5rem; /* Equivalent to Tailwind's mb-2 */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+.property-info p {
+    font-size: 0.875rem; /* Equivalent to Tailwind's text-sm */
+    color: #4a5568; /* Equivalent to Tailwind's text-gray-600 */
+    margin-bottom: 0.25rem; /* Adjust spacing */
+}
+
+.property-info p:last-child {
+    margin-top: 0.75rem; /* Equivalent to Tailwind's mt-3 */
+    font-size: 1.25rem; /* Equivalent to Tailwind's text-xl */
+    font-weight: 700; /* Equivalent to Tailwind's font-bold */
+    color: #4c51bf; /* Equivalent to Tailwind's text-indigo-700 */
+}
+
+/* Link styling */
+.property-card a {
+    text-decoration: none; /* Remove underline from Link component */
+    color: inherit; /* Inherit color from parent */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
